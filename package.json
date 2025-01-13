@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "db:seed": "sqlite3 db/db.sqlite < db/migrations/2-seed.sql",
     "db:reset": "sqlite3 db/db.sqlite < db/migrations/1-reset.sql",
     "dev": "nodemon server/run.js",
     "start": "node server/run.js",
@@ -32,7 +33,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "mocha": "^10.4.0",
+    "mocha": "^10.8.2",
     "nodemon": "^3.1.0",
     "supertest": "^6.3.4"
   }

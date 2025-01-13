@@ -11,10 +11,15 @@ class User {
   }
 
   static async findById(id) {
+      const query = `SELECT id, username, firstName, lastName, email, avatar 
+       FROM users WHERE id = ?`
+      const results = await db.raw(query, [id])
+      return results[0]
+    }
     /**
      * TODO: finish this method
      */
   }
-}
+
 
 export default User
